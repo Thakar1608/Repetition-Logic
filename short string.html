@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>String Sorting</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #ff9966, #ff5e62);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 90%;
+      max-width: 350px;
+    }
+
+    h3 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      width: 100%;
+      font-size: 16px;
+      border: 2px solid #ff5e62;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      outline: none;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #ff5e62;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+
+    }
+
+    button:hover {
+      background-color: #e64c4c;
+    }
+
+    .note {
+      font-size: 14px;
+      color: #555;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h3>Enter 3 Letters to Sort</h3>
+    <input type="text" id="inputStr" maxlength="3" placeholder="e.g. cba">
+    <button onclick="sort()">Sort</button>
+    <p class="note">Letters will be sorted alphabetically and shown in alert box.</p>
+  </div>
+
+  <script>
+    function sort() {
+      var str = document.getElementById("inputStr").value;
+
+      var a = str.charAt(0);
+      var b = str.charAt(1);
+      var c = str.charAt(2);
+
+      if (a > b) {
+        var temp = a; a = b; b = temp;
+      }
+      if (a > c) {
+        var temp = a; a = c; c = temp;
+      }
+      if (b > c) {
+        var temp = b; b = c; c = temp;
+      }
+
+      var result = a + b + c;
+      alert("Sorted: " + result);
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>String Length Without function </title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #6dd5ed, #2193b0);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+    }
+
+    h2 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      width: 100%;
+      border: 2px solid #2193b0;
+      border-radius: 8px;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #2193b0;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #176b8d;
+    }
+
+    .note {
+      margin-top: 15px;
+      color: #666;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Find String Length without use of inbuild function</h2>
+
+    <input type="text" id="inputText" placeholder="Type your sentence here...">
+    <button onclick="findLength()">Check Length</button>
+
+    <p class="note">Length will show in an alert box.</p>
+  </div>
+
+  <script>
+    function findLength() {
+      var str = document.getElementById("inputText").value;
+      var count = 0;
+
+
+      //null gives undefiend as output, so we have to use undefiend for the output
+      while (str[count] !== undefined) {
+        count++;
+      }
+
+      alert("Length of the string is: " + count);
+    }
+  </script>
+
+</body>
+</html>

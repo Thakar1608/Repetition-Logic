@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Easy Capitalization</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    h3 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border: 2px solid #2575fc;
+      border-radius: 8px;
+
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #2575fc;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+   
+    }
+
+    button:hover {
+      background-color: #1a5edb;
+    }
+
+    p {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #333;
+    }
+
+    #output {
+      color: #0066cc;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h3>Convert Sentence to Capitalized</h3>
+
+    <input id="inputText" placeholder="Sentence likho...">
+    <br>
+    <button onclick="capital()">Convert</button>
+
+    <p><b>Result:</b> <span id="output"></span></p>
+  </div>
+
+  <script>
+    function capital() {
+      var text = document.getElementById("inputText").value;
+      var words = text.split(" ");
+      var result = "";
+
+      for (var i = 0; i < words.length; i++) {
+        var w = words[i];
+        if (w.length > 0) {
+          result += w[0].toUpperCase() + w.substring(1).toLowerCase() + " ";
+        }
+      }
+
+      alert("Converted Sentence: " + result.trim());
+    }
+  </script>
+
+</body>
+</html>
